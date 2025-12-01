@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Edit Content</title>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <link rel="stylesheet" href="stylesheets/style.css" />
+</head>
+<body>
+      <a href="/">Go back to home</a>
+       <form class="text-white" action="/edit" method="post">
+          <input
+            class="block w-1/4 px-4 py-2 bg-zinc-800 w-full p-4"
+            type="text"
+            placeholder="Previous Title goes here... " name="prevTitle" value="<%=filename %>" disabled
+          />
+          <input
+            class="block px-5 py-2 mt-2 bg-zinc-800 resize-none w-full"
+            placeholder="new File name here..." name="newTitle" 
+          ></input>
+          <input
+            class="rounded px-4 py-4 mt-4 bg-blue-500"
+            type="submit"
+            value="Edit File"
+          />
+        </form>
+</body>
+</html>

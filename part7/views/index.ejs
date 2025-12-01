@@ -35,8 +35,10 @@
            <%=file.data  %>
           </p>
           <a href="/file/<%=file %>">Read more.</a>
+          <a class="text-red-500" href="/edit/<%=file %>">Edit File</a>
         </div>
-        <% }) %> <% }else{ %>
+        <% }) %>
+         <% }else{ %>
         <h3>No tasks yet</h3>
         <% } %>
       </div>
