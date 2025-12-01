@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900">
+      <div class="form mt-2">
+        <form action="/create" method="post">
+          <input
+            class="block px-4 py-2 bg-zinc-800 w-full p-4"
+            type="text"
+            placeholder="Title goes here... " name="title"
+          />
+          <textarea
+            class="block px-5 py-2 mt-2 bg-zinc-800 resize-none w-full"
+            placeholder="write your task details here..." name="details"
+          ></textarea>
+          <input
+            class="rounded px-4 py-4 mt-4 bg-blue-500"
+            type="submit"
+            value="Create Task"
+          />
+        </form>
+      </div>
+      <div class="tasks">
+        <% if(files.length>0){ %> <% files.forEach(function (file){%>
+        <div class="task">
+          <h1><%=file %></h1>
+          <p>
+           <%=file.data  %>
+          </p>
+          <a href="/file/<%=file %>">Read more.</a>
+        </div>
+        <% }) %> <% }else{ %>
+        <h3>No tasks yet</h3>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
